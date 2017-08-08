@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/radiogroup_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@color/whitesmoke"
+            android:orientation="horizontal">
+
+    <RadioButton
+        android:id="@+id/bottom_homepage_rbtn"
+        style="@style/BottomRgStyle"
+        android:checked="true"
+        android:drawableTop="@drawable/rb_homepage"
+        android:text="one"
+        android:textColor="@drawable/rb_textcolor"/>
+
+    <RadioButton
+        android:id="@+id/bottom_specialsale_rbtn"
+        style="@style/BottomRgStyle"
+        android:drawableTop="@drawable/rb_homepage"
+        android:text="two"
+        android:textColor="@drawable/rb_textcolor"/>
+
+
+    <RadioButton
+        android:id="@+id/bottom_project_rbtn"
+        style="@style/BottomRgStyle"
+        android:drawableTop="@drawable/rb_homepage"
+        android:text="three"
+        android:textColor="@drawable/rb_textcolor"/>
+
+    <RadioButton
+        android:id="@+id/bottom_mycate_rbtn"
+        style="@style/BottomRgStyle"
+        android:drawableTop="@drawable/rb_homepage"
+        android:text="four"
+        android:textColor="@drawable/rb_textcolor"/>
+
+</RadioGroup>
+

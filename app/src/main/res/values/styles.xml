@@ -1,0 +1,35 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/red</item>
+        <item name="colorPrimaryDark">@color/red</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <!--闪屏主题 -->
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <!--main主页底部button-->
+    <style name="BottomRgStyle">
+        <item name="android:layout_width">0dip</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">@dimen/space_padding_5</item>
+        <item name="android:textSize">@dimen/bottom_rbtn_text_size</item>
+        <item name="android:button">@null</item>
+    </style>
+
+    <!--login登陆-->
+    <style name="text_login">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textColor">@color/whitesmoke</item>
+    </style>
+
+</resources>
