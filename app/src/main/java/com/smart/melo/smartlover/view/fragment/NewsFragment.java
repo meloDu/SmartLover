@@ -4,22 +4,25 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.view.animation.AccelerateInterpolator;
 import android.widget.ImageView;
 
 import com.smart.melo.smartlover.R;
 import com.smart.melo.smartlover.base.BaseFragment;
 import com.smart.melo.smartlover.bean.VideoBean;
+import com.smart.melo.smartlover.utils.FixedSpeedScroller;
 import com.smart.melo.smartlover.utils.LogUtils;
 import com.smart.melo.smartlover.view.adapter.NewsFragmentAdapter;
 import com.smart.melo.smartlover.view.impl.INewsView;
 import com.smart.melo.smartlover.view.injector.compontent.DaggerNewsFragmentComponent;
 import com.smart.melo.smartlover.view.injector.module.NewsFragmentModule;
+import com.smart.melo.smartlover.weight.DepthPageTransformer;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 
 /**
  * Created by melo on 2017/8/7.
@@ -75,7 +78,23 @@ public class NewsFragment extends BaseFragment {
         mViewpager.setAdapter(adapter);
         //关闭预加载，默认一次只加载一个Fragment
         mViewpager.setOffscreenPageLimit(2);
+        //设置viewpager内两两间距
         mViewpager.setPageMargin(5);
+        //设置viewpager滑动动画效果
+        mViewpager.setPageTransformer(true, new DepthPageTransformer());
+        //反射修改viewpager切换时间.
+        try {
+            Field field = ViewPager.class.getDeclaredField("mScroller");
+            field.setAccessible(true);
+            FixedSpeedScroller scroller = new FixedSpeedScroller(mViewpager.getContext(),
+                    new AccelerateInterpolator());
+            field.set(mViewpager, scroller);
+            scroller.setmDuration(500);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
         // 设置viewpager和tablayout联动
         mViewpager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(mTablayout));
         mTablayout.setupWithViewPager(mViewpager);
@@ -103,7 +122,7 @@ public class NewsFragment extends BaseFragment {
 
     }
 
-
+    //
     private INewsView mINewsView = new INewsView() {
         @Override
         public void OnMsgSuccess(Object o) {
@@ -118,9 +137,4 @@ public class NewsFragment extends BaseFragment {
     };
 
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
-    }
 }

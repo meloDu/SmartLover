@@ -50,7 +50,7 @@ public class MyApp extends Application {
         super.onCreate();
         //一次性初始化
         mAppComponent = DaggerAppComponent.builder()
-                .apiModule(new ApiModule(UrlConfig.BASE_URL))
+                .apiModule(new ApiModule(UrlConfig.BASEURL_NEWS))
                 .appModule(new AppModule(this))
                 .build();
         //内存泄漏检测

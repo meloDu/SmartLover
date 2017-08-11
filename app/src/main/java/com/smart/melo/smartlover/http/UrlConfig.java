@@ -7,7 +7,7 @@ public class UrlConfig {
 
 
     //BaseUrl
-    public static final String BASE_URL = "http://v.juhe.cn/toutiao/";
+    public static final String BASEURL_NEWS = "http://v.juhe.cn/toutiao/";
     public static final String VIDEO = "/kkuser/listinfo/list/appclassid/609/timestamp/";
     //头条
     public static final String TOP = "index";

@@ -5,8 +5,9 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 
-import com.smart.melo.smartlover.R;
 import com.smart.melo.smartlover.weight.ProgressWebView;
+
+import butterknife.ButterKnife;
 
 /**
  * Created by melo on 2017/6/15.
@@ -18,7 +19,7 @@ public abstract class BaseWebViewActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
-        webview = (ProgressWebView) findViewById(R.id.webview);
+        ButterKnife.bind(this);
         initView();
         initData();
 
@@ -30,8 +31,18 @@ public abstract class BaseWebViewActivity extends AppCompatActivity {
 
     public abstract int getLayoutId();
 
-    public void loadUrl(String url) {
+    public void loadUrl(ProgressWebView mWebview,String url) {
+        this.webview=mWebview;
         webview.loadUrl(url);
+    }
+
+    public void goBack() {
+        if (webview.canGoBack()){
+            webview.goBack();
+        }else {
+            finish();
+        }
+
     }
 
     @Override
@@ -60,4 +71,9 @@ public abstract class BaseWebViewActivity extends AppCompatActivity {
         return super.onKeyDown(keyCode, event);
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ButterKnife.unbind(this);
+    }
 }

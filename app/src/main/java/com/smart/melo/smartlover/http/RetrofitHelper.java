@@ -41,9 +41,9 @@ public class RetrofitHelper {
         return client;
     }
 
-    public Retrofit createRetrofit() {
+    public Retrofit createRetrofit(String baseUrl) {
         return new Retrofit.Builder()
-                .baseUrl(UrlConfig.BASE_URL)
+                .baseUrl(baseUrl)
                 .client(createHttpClient())
                 //gson解析要加
                 .addConverterFactory(GsonConverterFactory.create(createGson()))
@@ -52,11 +52,13 @@ public class RetrofitHelper {
                 .build();
     }
 
-    public Api getService() {
-        Retrofit retrofit = createRetrofit();
+    public Api getService(String baseUrl) {
+        Retrofit retrofit = createRetrofit(baseUrl);
         Api apiService = retrofit.create(Api.class);
         return apiService;
     }
+
+
 
     /**
      * @return
