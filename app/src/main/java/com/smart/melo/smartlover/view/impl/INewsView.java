@@ -1,7 +1,7 @@
 package com.smart.melo.smartlover.view.impl;
 
 /**
- * Created by duyanfeng on 2017/8/7.
+ * Created by melo on 2017/8/7.
  */
 public interface INewsView {
 

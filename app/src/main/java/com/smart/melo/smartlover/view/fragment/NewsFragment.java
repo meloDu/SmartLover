@@ -23,7 +23,7 @@ import butterknife.ButterKnife;
 
 /**
  * Created by melo on 2017/8/7.
- * 新闻碎片
+ * mainactivity新闻碎片
  */
 public class NewsFragment extends BaseFragment {
     private static final String TAG = NewsFragment.class.getSimpleName();

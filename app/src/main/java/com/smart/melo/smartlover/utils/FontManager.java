@@ -1,7 +1,7 @@
 package com.smart.melo.smartlover.utils;
 
 /**
- * Created by duyanfeng on 2017/8/4.
+ * Created by melo on 2017/8/4.
  * 将控件变为艺术字
  */
 public class FontManager {

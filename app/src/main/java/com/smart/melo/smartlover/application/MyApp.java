@@ -18,7 +18,7 @@ import com.smart.melo.smartlover.http.UrlConfig;
 import com.squareup.leakcanary.LeakCanary;
 
 /**
- * Created by duyanfeng on 2017/8/4.
+ * Created by melo on 2017/8/4.
  */
 public class MyApp extends Application {
     AppComponent mAppComponent;

@@ -9,7 +9,7 @@ import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 
 /**
- * Created by duyanfeng on 2017/8/7.
+ * Created by melo on 2017/8/7.
  */
 @Singleton
 @Component(modules = {ApiModule.class,AppModule.class})

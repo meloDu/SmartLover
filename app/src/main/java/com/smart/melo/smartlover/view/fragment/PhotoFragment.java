@@ -6,7 +6,7 @@ import android.support.v4.app.Fragment;
 import com.smart.melo.smartlover.base.BaseFragment;
 
 /**
- * Created by duyanfeng on 2017/8/11.
+ * Created by melo on 2017/8/11.
  * 图片浏览
  */
 public class PhotoFragment  extends BaseFragment {

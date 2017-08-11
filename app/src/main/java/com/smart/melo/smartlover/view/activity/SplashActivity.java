@@ -15,7 +15,7 @@ import com.smart.melo.smartlover.view.injector.compontent.DaggerSplashActivityCo
 import javax.inject.Inject;
 
 /**
- * Created by duyanfeng on 2017/8/4.
+ * Created by melo on 2017/8/4.
  * 闪屏
  * 1.设置延时
  * 2.判断程序是否是第一次运行

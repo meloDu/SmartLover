@@ -6,7 +6,7 @@ import com.smart.melo.smartlover.R;
 import com.smart.melo.smartlover.base.BaseWebViewActivity;
 
 /**
- * Created by duyanfeng on 2017/8/11.
+ * Created by melo on 2017/8/11.
  */
 public class TopDetailsActivity extends BaseWebViewActivity {
     private static final String TAG = TopDetailsActivity.class.getSimpleName();

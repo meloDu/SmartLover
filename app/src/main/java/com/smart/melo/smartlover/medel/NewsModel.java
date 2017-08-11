@@ -9,7 +9,7 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
 /**
- * Created by duyanfeng on 2017/8/7.
+ * Created by melo on 2017/8/7.
  * 处理news碎片的业务
  */
 public class NewsModel {

@@ -4,7 +4,7 @@ import com.smart.melo.smartlover.R;
 import com.smart.melo.smartlover.base.BaseActivity;
 
 /**
- * Created by duyanfeng on 2017/8/4.
+ * Created by melo on 2017/8/4.
  * 登陆界面
  */
 public class LoginActivity extends BaseActivity {

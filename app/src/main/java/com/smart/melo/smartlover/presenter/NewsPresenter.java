@@ -8,7 +8,7 @@ import com.smart.melo.smartlover.medel.NewsModel;
 import com.smart.melo.smartlover.view.impl.INewsView;
 
 /**
- * Created by duyanfeng on 2017/8/7.
+ * Created by melo on 2017/8/7.
  * news的p层
  */
 public class NewsPresenter {

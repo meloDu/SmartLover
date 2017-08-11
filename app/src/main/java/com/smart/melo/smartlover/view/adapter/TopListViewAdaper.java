@@ -15,7 +15,7 @@ import com.smart.melo.smartlover.utils.ImageLoadHelper;
 import java.util.List;
 
 /**
- * Created by duyanfeng on 2017/8/10.
+ * Created by melo on 2017/8/10.
  */
 public class TopListViewAdaper extends BaseAdapter {
 
