@@ -34,6 +34,7 @@ public abstract class BaseFragment extends Fragment {
                 getFragmentManager().beginTransaction().hide(this).commit();
             }
         }
+
     }
 
 
@@ -48,6 +49,7 @@ public abstract class BaseFragment extends Fragment {
             onInvisible();
         }
     }
+
 
     /**
      * 可见
@@ -89,15 +91,16 @@ public abstract class BaseFragment extends Fragment {
 
 
     public final void init() {
+        inject();
         initView();
         initData();
     }
 
+    protected abstract void inject();
+
     protected abstract void initData();
 
     protected abstract void initView();
-
-
 
 
     @Override

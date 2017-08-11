@@ -10,7 +10,7 @@ import com.smart.melo.smartlover.application.Config;
 import com.smart.melo.smartlover.application.MyApp;
 import com.smart.melo.smartlover.base.BaseActivity;
 import com.smart.melo.smartlover.utils.SPUtils;
-import com.smart.melo.smartlover.view.compontent.DaggerSplashActivityComponent;
+import com.smart.melo.smartlover.view.injector.compontent.DaggerSplashActivityComponent;
 
 import javax.inject.Inject;
 

@@ -5,4 +5,24 @@
     <string name="login_password">密码:</string>
     <string name="btn_login">登陆</string>
     <string name="btn_register">注册</string>
+
+    <string name="bottom_one">新闻</string>
+    <string name="bottom_two">图片</string>
+    <string name="bottom_three">视频</string>
+    <string name="bottom_four">个人</string>
+
+
+    <!--新闻碎片中的标题-->
+    <string-array name="hot_titles">
+        <item>头条</item>
+        <item>社会</item>
+        <item>国内</item>
+        <item>国际</item>
+        <item>娱乐</item>
+        <item>体育</item>
+        <item>军事</item>
+        <item>科技</item>
+        <item>财经</item>
+        <item>时尚</item>
+    </string-array>
 </resources>

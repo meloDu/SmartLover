@@ -5,19 +5,25 @@ package com.smart.melo.smartlover.http;
  */
 public class UrlConfig {
 
-    public static final String BASE_URL = "http://baoliao.api.kankanews.com";
-    public static final String VIDEO= "/kkuser/listinfo/list/appclassid/609/timestamp/";
+
+    //BaseUrl
+    public static final String BASE_URL = "http://v.juhe.cn/toutiao/";
+    public static final String VIDEO = "/kkuser/listinfo/list/appclassid/609/timestamp/";
+    //头条
+    public static final String TOP = "index";
 
 
     public static class RequestUrl {
-        public  static final String HOT_URL = "http://v.juhe.cn/toutiao/index";
+        public static final String HOT_URL = "http://v.juhe.cn/toutiao/index";
     }
 
     public static class RequestKey {
-//       String  HOT_TYPE=
+        public static final String TYPE = "type";
+        public static final String KEY = "key";
     }
 
     public static class DefaultVAULE {
-
+        public static final String TOP = "top";
+        public static final String KEY_VAULE = "723060051cc0b5baa348a8024b1bb7e1";
     }
 }

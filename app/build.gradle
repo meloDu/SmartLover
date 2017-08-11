@@ -21,9 +21,15 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:25.3.1'
+    //LeakCanary
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+    //design
+    compile 'com.android.support:design:25.0.1'
     //butterknife
     compile 'com.jakewharton:butterknife:7.0.1'
     //okhttp+retrofit
@@ -38,5 +44,8 @@ dependencies {
     compile 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
     compile 'io.reactivex:rxandroid:1.1.0'
     compile 'io.reactivex:rxjava:1.1.0'
-
+    //picasso
+    compile 'com.squareup.picasso:picasso:2.3.2'
+    //smartrefresh
+    compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.3'
 }
