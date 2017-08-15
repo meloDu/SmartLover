@@ -9,8 +9,10 @@ import android.widget.RadioGroup;
 import com.smart.melo.smartlover.R;
 import com.smart.melo.smartlover.base.BaseActivity;
 import com.smart.melo.smartlover.utils.BottomTabManager;
+import com.smart.melo.smartlover.view.fragment.MineFragment;
 import com.smart.melo.smartlover.view.fragment.NewsFragment;
 import com.smart.melo.smartlover.view.fragment.PhotoFragment;
+import com.smart.melo.smartlover.view.fragment.VideoFragment;
 
 import java.util.ArrayList;
 
@@ -20,6 +22,10 @@ public class MainActivity extends BaseActivity implements BottomTabManager.OnBot
     private static final String TAG = MainActivity.class.getSimpleName();
     //默认选中的页面下标
     public static final int CHECK_HOME_INDEX = 0;
+    public static final int CHECK_PHOTO_INDEX = 1;
+    public static final int CHECK_VIDEO_INDEX = 2;
+    public static final int CHECK_MINE_INDEX = 3;
+
     @Bind(R.id.radiogroup_bottom)
     RadioGroup mRadiogroupBottom;
 
@@ -28,8 +34,8 @@ public class MainActivity extends BaseActivity implements BottomTabManager.OnBot
         ArrayList<Fragment> fragments = new ArrayList<>();
         fragments.add(NewsFragment.newInstance());
         fragments.add(PhotoFragment.newInstance());
-        fragments.add(NewsFragment.newInstance());
-        fragments.add(NewsFragment.newInstance());
+        fragments.add(VideoFragment.newInstance());
+        fragments.add(MineFragment.newInstance());
         new BottomTabManager(fragments, mRadiogroupBottom, getSupportFragmentManager(),
                 R.id.layout_content
                 , this);
@@ -56,6 +62,12 @@ public class MainActivity extends BaseActivity implements BottomTabManager.OnBot
     public void onBottomTabSelectListener(RadioGroup group, int checkedId, int index) {
         switch (index) {
             case CHECK_HOME_INDEX:
+                break;
+            case CHECK_PHOTO_INDEX:
+                break;
+            case CHECK_VIDEO_INDEX:
+                break;
+            case CHECK_MINE_INDEX:
                 break;
         }
     }

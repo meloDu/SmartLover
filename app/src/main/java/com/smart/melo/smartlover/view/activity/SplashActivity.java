@@ -5,7 +5,7 @@ import android.os.Handler;
 import android.os.Message;
 
 import com.smart.melo.smartlover.R;
-import com.smart.melo.smartlover.application.AppComponent;
+import com.smart.melo.smartlover.view.injector.AppComponent;
 import com.smart.melo.smartlover.application.Config;
 import com.smart.melo.smartlover.application.MyApp;
 import com.smart.melo.smartlover.base.BaseActivity;

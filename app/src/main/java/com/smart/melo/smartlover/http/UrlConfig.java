@@ -12,9 +12,14 @@ public class UrlConfig {
     //头条
     public static final String TOP = "index";
 
+    //图片欣赏
+    public static final String BASEURL_PHOTO = "http://gank.io/api/data/";
 
-    public static class RequestUrl {
-        public static final String HOT_URL = "http://v.juhe.cn/toutiao/index";
+
+    public static class RequestColumn {
+        public static final String TYPE = "福利";
+        public static final String AMOUNT = "10";
+        public static final String PAGE = "1";
     }
 
     public static class RequestKey {
@@ -24,6 +29,7 @@ public class UrlConfig {
 
     public static class DefaultVAULE {
         public static final String TOP = "top";
+        public static final String SOCIAL = "shehui";
         public static final String KEY_VAULE = "723060051cc0b5baa348a8024b1bb7e1";
     }
 }

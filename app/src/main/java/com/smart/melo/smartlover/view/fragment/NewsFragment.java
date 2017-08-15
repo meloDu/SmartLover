@@ -4,13 +4,12 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.view.animation.AccelerateInterpolator;
+import android.util.Log;
 import android.widget.ImageView;
 
 import com.smart.melo.smartlover.R;
 import com.smart.melo.smartlover.base.BaseFragment;
 import com.smart.melo.smartlover.bean.VideoBean;
-import com.smart.melo.smartlover.utils.FixedSpeedScroller;
 import com.smart.melo.smartlover.utils.LogUtils;
 import com.smart.melo.smartlover.view.adapter.NewsFragmentAdapter;
 import com.smart.melo.smartlover.view.impl.INewsView;
@@ -18,7 +17,6 @@ import com.smart.melo.smartlover.view.injector.compontent.DaggerNewsFragmentComp
 import com.smart.melo.smartlover.view.injector.module.NewsFragmentModule;
 import com.smart.melo.smartlover.weight.DepthPageTransformer;
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,7 +36,7 @@ public class NewsFragment extends BaseFragment {
     ViewPager mViewpager;
 
 
-    public static Fragment newInstance() {
+    public static NewsFragment newInstance() {
         Bundle args = new Bundle();
         NewsFragment fragment = new NewsFragment();
         fragment.setArguments(args);
@@ -47,7 +45,12 @@ public class NewsFragment extends BaseFragment {
 
     @Override
     protected void lazyLoad() {
+        Log.i(TAG, "appear  isVisible:"+isVisible);
+    }
 
+    @Override
+    protected void disappear() {
+        Log.i(TAG, "disappear  isVisible:"+isVisible);
     }
 
 
@@ -72,27 +75,28 @@ public class NewsFragment extends BaseFragment {
     @Override
     protected void initView() {
 
+
         initViewPager();
         String[] titles = getResources().getStringArray(R.array.hot_titles);
         NewsFragmentAdapter adapter = new NewsFragmentAdapter(titles, fragments, getFragmentManager());
         mViewpager.setAdapter(adapter);
         //关闭预加载，默认一次只加载一个Fragment
-        mViewpager.setOffscreenPageLimit(2);
+        mViewpager.setOffscreenPageLimit(1);
         //设置viewpager内两两间距
         mViewpager.setPageMargin(5);
         //设置viewpager滑动动画效果
         mViewpager.setPageTransformer(true, new DepthPageTransformer());
         //反射修改viewpager切换时间.
-        try {
-            Field field = ViewPager.class.getDeclaredField("mScroller");
-            field.setAccessible(true);
-            FixedSpeedScroller scroller = new FixedSpeedScroller(mViewpager.getContext(),
-                    new AccelerateInterpolator());
-            field.set(mViewpager, scroller);
-            scroller.setmDuration(500);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        try {
+//            Field field = ViewPager.class.getDeclaredField("mScroller");
+//            field.setAccessible(true);
+//            FixedSpeedScroller scroller = new FixedSpeedScroller(mViewpager.getContext(),
+//                    new AccelerateInterpolator());
+//            field.set(mViewpager, scroller);
+//            scroller.setmDuration(500);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
 
 
         // 设置viewpager和tablayout联动
@@ -109,15 +113,15 @@ public class NewsFragment extends BaseFragment {
     private void initViewPager() {
         fragments = new ArrayList<>();
         fragments.add(TopFragment.newInstance());
-        fragments.add(TopFragment.newInstance());
-        fragments.add(TopFragment.newInstance());
-        fragments.add(TopFragment.newInstance());
-        fragments.add(TopFragment.newInstance());
-        fragments.add(TopFragment.newInstance());
-        fragments.add(TopFragment.newInstance());
-        fragments.add(TopFragment.newInstance());
-        fragments.add(TopFragment.newInstance());
-        fragments.add(TopFragment.newInstance());
+        fragments.add(SocialFragment.newInstance());
+        fragments.add(SocialFragment.newInstance());
+        fragments.add(SocialFragment.newInstance());
+        fragments.add(SocialFragment.newInstance());
+        fragments.add(SocialFragment.newInstance());
+        fragments.add(SocialFragment.newInstance());
+        fragments.add(SocialFragment.newInstance());
+        fragments.add(SocialFragment.newInstance());
+        fragments.add(SocialFragment.newInstance());
 
 
     }

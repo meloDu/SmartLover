@@ -9,16 +9,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.smart.melo.smartlover.R;
-import com.smart.melo.smartlover.bean.TopBean;
+import com.smart.melo.smartlover.bean.SocialBean;
 import com.smart.melo.smartlover.utils.ImageLoadHelper;
 
 import java.util.List;
 
 /**
  * Created by melo on 2017/8/10.
- * 头条
+ * 社会
  */
-public class TopListViewAdaper extends BaseAdapter {
+public class SocialListViewAdaper extends BaseAdapter {
 
     public static final int TYPT_NO_IMG = 0;// 4种不同的布局
     public static final int TYPT_ONE_IMG = 1;
@@ -28,7 +28,7 @@ public class TopListViewAdaper extends BaseAdapter {
 
     private Context mContext;
     private LayoutInflater mInflater;
-    private List<TopBean.ResultBean.DataBean> mDataBeanList;
+    private List<SocialBean.ResultBean.DataBean> mDataBeanList;
 
     private ViewHolderNoImg mViewHolderNoImg;
     private ViewHolderOneImg mViewHolderOneImg;
@@ -36,7 +36,7 @@ public class TopListViewAdaper extends BaseAdapter {
     private ViewHolderThreeImg mViewHolderThreeImg;
 
 
-    public TopListViewAdaper(Context mContext, List<TopBean.ResultBean.DataBean> mDataBeanList) {
+    public SocialListViewAdaper(Context mContext, List<SocialBean.ResultBean.DataBean> mDataBeanList) {
         this.mDataBeanList = mDataBeanList;
         this.mContext = mContext;
         mInflater = (LayoutInflater) mContext

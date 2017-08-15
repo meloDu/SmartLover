@@ -64,14 +64,18 @@ public class AdvertiseView extends ViewFlipper {
      * 开始滚动
      */
     public void startRoll() {
-        startFlipping();
+        if (!isFlipping()){
+            startFlipping();
+        }
     }
 
     /**
      * 停止滚动
      */
     public void stopRoll() {
-        stopFlipping();
+        if (isFlipping()){
+            stopFlipping();
+        }
     }
  
  

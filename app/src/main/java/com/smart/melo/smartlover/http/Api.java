@@ -1,5 +1,7 @@
 package com.smart.melo.smartlover.http;
 
+import com.smart.melo.smartlover.bean.PhotoBean;
+import com.smart.melo.smartlover.bean.SocialBean;
 import com.smart.melo.smartlover.bean.TopBean;
 import com.smart.melo.smartlover.bean.VideoBean;
 
@@ -22,4 +24,9 @@ public interface Api {
     @POST("{path}?")
     Observable<TopBean> getTopData(@Path("path") String path, @QueryMap() Map<String, String> map);
 
+    @POST("{path}?")
+    Observable<SocialBean> getSocialData(@Path("path") String path, @QueryMap() Map<String, String> map);
+
+    @GET("{type}/{amount}/{page}")
+    Observable<PhotoBean> getPhotoData(@Path("type") String type, @Path("amount") String amount, @Path("page") String page);
 }

@@ -1,5 +1,6 @@
-package com.smart.melo.smartlover.application;
+package com.smart.melo.smartlover.view.injector;
 
+import com.smart.melo.smartlover.application.MyApp;
 import com.smart.melo.smartlover.http.ApiModule;
 
 import javax.inject.Singleton;

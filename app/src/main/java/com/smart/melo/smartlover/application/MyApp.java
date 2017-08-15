@@ -15,6 +15,9 @@ import com.scwang.smartrefresh.layout.header.ClassicsHeader;
 import com.smart.melo.smartlover.R;
 import com.smart.melo.smartlover.http.ApiModule;
 import com.smart.melo.smartlover.http.UrlConfig;
+import com.smart.melo.smartlover.view.injector.AppComponent;
+import com.smart.melo.smartlover.view.injector.AppModule;
+import com.smart.melo.smartlover.view.injector.DaggerAppComponent;
 import com.squareup.leakcanary.LeakCanary;
 
 /**
