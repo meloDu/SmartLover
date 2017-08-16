@@ -1,5 +1,7 @@
 package com.smart.melo.smartlover.medel;
 
+import android.util.Log;
+
 import com.smart.melo.smartlover.bean.PhotoBean;
 import com.smart.melo.smartlover.http.ApiCallBack;
 import com.smart.melo.smartlover.http.RetrofitHelper;
@@ -22,6 +24,7 @@ public class PhotoModel {
      * @param callBack
      */
     public void mPhotoMsg(String type ,String amount ,String page ,final ApiCallBack<PhotoBean> callBack) {
+        Log.i( "PhotoFragment", type+amount+page);
         RetrofitHelper.getInstance().getService(UrlConfig.BASEURL_PHOTO).getPhotoData(type,amount,page)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

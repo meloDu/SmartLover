@@ -43,6 +43,13 @@ public class PhotoFragment extends BaseFragment {
     @Inject
     PhotoPresenter mPhotoPresenter;
 
+    //是否已被加载过一次，第二次就不再去请求数据了
+    private boolean mHasLoadedOnce;
+    //默认加载页码
+    private int pageIdx = UrlConfig.RequestColumn.PAGE;
+    //默认每页加载数量
+    private int amount = UrlConfig.RequestColumn.AMOUNT;
+
     List<String> data = new ArrayList<>();
     List<View> views = new ArrayList<>();
 
@@ -96,10 +103,10 @@ public class PhotoFragment extends BaseFragment {
         mAdvertiseView.setViews(views);
         //适配图片
         adaper = new PhotoRecyclerAdapter(getActivity(), photolList);
-        mRvPhoto.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
+        mRvPhoto.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         mRvPhoto.setAdapter(adaper);
         //设置item之间的间隔
-        SpaceItemDecoration decoration=new SpaceItemDecoration(16);
+        SpaceItemDecoration decoration = new SpaceItemDecoration(16);
         mRvPhoto.addItemDecoration(decoration);
     }
 
@@ -114,12 +121,12 @@ public class PhotoFragment extends BaseFragment {
     private IBaseView mIBaseView = new IBaseView() {
         @Override
         public void OnMsgSuccess(Object o) {
-            dismissDiaLog();
+            dismissRefresh();
             //将数据装进集合
             PhotoBean photoBean = (PhotoBean) o;
             photolList.addAll(photoBean.getResults());
             adaper.notifyDataSetChanged();
-            LogUtils.i(TAG, photoBean.getResults().get(0).getUrl());
+            LogUtils.i(TAG, photoBean.getResults().get(0).getUrl()+ "photolList.size():"+photolList.size());
         }
 
         @Override
@@ -168,10 +175,21 @@ public class PhotoFragment extends BaseFragment {
         LogUtils.i(TAG, "onResume：");
         //广告位滚动
         mAdvertiseView.startRoll();
+        if (mHasLoadedOnce) {
+            return;
+        }
         showDiaLog();
         mPhotoPresenter.pPhotoMsg(UrlConfig.RequestColumn.TYPE,
-                UrlConfig.RequestColumn.AMOUNT,
-                UrlConfig.RequestColumn.PAGE);
+                UrlConfig.RequestColumn.AMOUNT + "",
+                UrlConfig.RequestColumn.PAGE + "");
+
+        mHasLoadedOnce = true;
+    }
+
+
+    //关闭加载提示
+    private void dismissRefresh() {
+        dismissDiaLog();
     }
 
 }

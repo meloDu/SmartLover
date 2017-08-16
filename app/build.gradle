@@ -18,6 +18,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    packagingOptions{
+        exclude 'META-INF/services/javax.annotation.processing.Processor' // will not include NOTICE file
+    }
 }
 
 dependencies {
@@ -46,6 +50,11 @@ dependencies {
     compile 'io.reactivex:rxjava:1.1.0'
     //picasso
     compile 'com.squareup.picasso:picasso:2.3.2'
+//     glide
+//    compile 'com.github.bumptech.glide:glide:4.0.0'
     //smartrefresh
     compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.3'
+    //glideimageview  https://github.com/sfsheng0322/GlideImageView
+    compile 'com.sunfusheng:glideimageview:1.0.0'
+
 }

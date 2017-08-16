@@ -18,8 +18,8 @@ public class UrlConfig {
 
     public static class RequestColumn {
         public static final String TYPE = "福利";
-        public static final String AMOUNT = "10";
-        public static final String PAGE = "1";
+        public static final int AMOUNT = 10;
+        public static final int PAGE = 1;
     }
 
     public static class RequestKey {

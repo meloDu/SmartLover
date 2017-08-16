@@ -12,7 +12,7 @@ import com.smart.melo.smartlover.R;
 import java.util.List;
 
 /**
- * 仿淘宝首页的广告 淘宝头条滚动的自定义View
+ * 垂直滚动的自定义View
  *
  * Created by melo on 2017/8/11.
  */

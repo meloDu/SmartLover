@@ -5,23 +5,22 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.smart.melo.smartlover.R;
 import com.smart.melo.smartlover.bean.PhotoBean;
-import com.smart.melo.smartlover.utils.ImageLoadHelper;
+import com.sunfusheng.glideimageview.GlideImageView;
 
 import java.util.List;
 
+
 /**
- * Created by melo on 2017/8/15.
+ * Created by melo on 2017/8/15.X
  */
 public class PhotoRecyclerAdapter extends RecyclerView.Adapter<PhotoRecyclerAdapter.ViewHolder> {
 
     private List<PhotoBean.ResultsBean> photoList;
     private Context context;
-
 
 
     public interface ItemClickListener {
@@ -49,7 +48,17 @@ public class PhotoRecyclerAdapter extends RecyclerView.Adapter<PhotoRecyclerAdap
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         String imageUrl = photoList.get(position).getUrl();
-        ImageLoadHelper.loadImage(context, holder.mImageView, imageUrl, R.mipmap.ic_launcher);
+//        ImageLoadHelper.loadImage(context, holder.mImageView, imageUrl, R.mipmap.ic_launcher);
+        holder.mImageView.loadImage(imageUrl,R.color.whitesmoke);
+//        RequestOptions requestOptions = holder.mImageView.requestOptions(R.color.black)
+//                .centerCrop()
+//                .override(600, 200)
+//                .skipMemoryCache(true) // 跳过内存缓存
+//                .diskCacheStrategy(DiskCacheStrategy.NONE); // 不缓存到SDCard中
+//        holder.mImageView.getImageLoader().requestBuilder(imageUrl, requestOptions)
+//                .transition(DrawableTransitionOptions.withCrossFade()) // 动画渐变加载
+//                .into(holder.mImageView);
+
     }
 
     @Override
@@ -58,14 +67,13 @@ public class PhotoRecyclerAdapter extends RecyclerView.Adapter<PhotoRecyclerAdap
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView mImageView;
+        GlideImageView mImageView;
         RelativeLayout mLayout;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            mImageView = (ImageView) itemView.findViewById(R.id.iv_photorv);
+            mImageView = (GlideImageView) itemView.findViewById(R.id.iv_photorv);
             mLayout = (RelativeLayout) itemView.findViewById(R.id.layout_photorv);
-
             mLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -75,5 +83,6 @@ public class PhotoRecyclerAdapter extends RecyclerView.Adapter<PhotoRecyclerAdap
                 }
             });
         }
+
     }
 }
